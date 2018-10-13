@@ -1,0 +1,4 @@
+element { 
+    zoom: 1; /*offre le layout à un élément (*)*/
+    display: inline;
+ }

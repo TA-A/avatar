@@ -27,7 +27,7 @@
             
 
         <p><label for="nom">Nom</label> <input type="text" id="nom" maxlenght="20" required> <span id="missNom"></span></p>
-        <p> <label for="email">E-mail</label> <input type="email" id="email" required> <span id="missMail"></span></p>
+        <p> <label for="email">E-mail</label> <input type="email" id="email" placeholder="Entrez votre e-mail" required> <span id="missMail"></span></p>
         <p> <label for="tel">Téléphone</label> <input type="tel" id="tel"> </p>
         <p> <label for="sujet">Sujet</label> <input type="text" id="sujet"> </p>
         
@@ -42,15 +42,17 @@
 
     <script>
         var formValid = document.getElementById("bouton_envoi");
+
         var nom = document.getElementById("nom");
         var missNom = document.getElementById("missNom");
         var nomValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+
         var email = document.getElementById("email");
         var missEmail = document.getElementById("missMail");
-        var emailValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+        var emailValid = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        
         var message = document.getElementById("message");
         var missMess = document.getElementById("missMess");
-        var messValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
 
         formValid.addEventListener("click", validation);
 

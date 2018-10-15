@@ -8,37 +8,41 @@
     <title>Contact</title>
 </head>
 <body>
-    
-    <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-    </div>
+    <header>
+        <nav>    
+            <div class="topnav">
+                <a class="active" href="index.html">Acceuil</a>
+                <a href="#news">News</a>
+                <a class="active" href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>   
+        <h2>Thècle-Aurélie Augustin</h2>
+        <h3>Graphiste Webdesigner</h3>
+
+        <p>Email : thecleaurelie.@codeur.online<br />
+            Tel : 0642 20 58 44<br />
+            Site : thecleaurelieaugustin.com</p>
+
+        <form name="my_form" action="traitement.php" method="post">
+            <p><label for="nom">Nom</label> <input type="text" id="nom" maxlenght="20" required> <span id="missNom"></span></p>
+            <p> <label for="email">E-mail</label> <input type="email" id="email" placeholder="Entrez votre e-mail" required> <span id="missMail"></span></p>
+            <p> <label for="tel">Téléphone</label> <input type="tel" id="tel"> </p>
+            <p> <label for="sujet">Sujet</label> <input type="text" id="sujet"> </p>
         
-    <h2>Thècle-Aurélie Augustin</h2>
-    <h3>Graphiste Webdesigner</h3>
+            <p> <label for="message">Message</label> <textarea id="message" required></textarea> <span id="missMess"></span> </p>
 
-    <p>Email : thecleaurelie.@codeur.online<br />
-        Tel : 0642 20 58 44<br />
-        Site : thecleaurelieaugustin.com</p>
+            <p> <input type="submit" value="Valider" id="bouton_envoi"></p>        
+        </form>
 
-    <form name="my_form" action="traitement.php" method="post">
-            
+    </section> 
 
-        <p><label for="nom">Nom</label> <input type="text" id="nom" maxlenght="20" required> <span id="missNom"></span></p>
-        <p> <label for="email">E-mail</label> <input type="email" id="email" placeholder="Entrez votre e-mail" required> <span id="missMail"></span></p>
-        <p> <label for="tel">Téléphone</label> <input type="tel" id="tel"> </p>
-        <p> <label for="sujet">Sujet</label> <input type="text" id="sujet"> </p>
-        
-        <p> <label for="message">Message</label> <textarea id="message" required></textarea> <span id="missMess"></span> </p>
-
-        <p> <input type="submit" value="Valider" id="bouton_envoi"></p>
-
-        
-    </form>
-
+    <footer>
     <span id="copyright">&copy; 2018 Thècle-Aurélie Augustin</span>
+    </footer>
 
     <script>
         var formValid = document.getElementById("bouton_envoi");
@@ -63,7 +67,8 @@
                 missNom.textContent = "Nom manquant";
                 missNom.style.color = "red";
             //Si le format de données est incorrect
-            }else if (nomValid.test(nom.value) == false){
+            }
+            else if (nomValid.test(nom.value) == false){
                     event.preventDefault();
                     missNom.textContent = 'Format incorrect';
                     missNom.style.color = 'orange';
